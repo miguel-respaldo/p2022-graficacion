@@ -3,6 +3,5 @@ numero = eval(input("Escribe un número: "))
 print("Escribiste el número:", numero)
 
 #Texto:
-texto = input("Escribiste un texto: ")
+texto = input("Escribe un texto: ")
 print("Escribiste el texto: " + texto)
-

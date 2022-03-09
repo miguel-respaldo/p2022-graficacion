@@ -1,4 +1,4 @@
-#Operadores a nivel de Bits (Birwise)
+#Operadores a nivel de Bits (Bitwise)
 
 x = 22
 

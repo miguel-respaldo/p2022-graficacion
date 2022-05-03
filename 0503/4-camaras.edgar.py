@@ -10,17 +10,25 @@ while True:
     # Leeo la imagen de la camara
     retorno, imagen = camara.read()
 
+
     if not retorno:
         print("No puedo capturar la imagen de la camara")
         break
 
-    espejo = cv.flip(imagen, -1)
+    espejo = cv.flip(imagen, 1)
+    decabeza = cv.flip(imagen, -1)
+    decabezaespejo = cv.flip(imagen, 0)
+
     # 0 de cabeza
     # 1 Espejo
     # -1 de cabeza espejo
 
     cv.imshow("Camara", imagen)
     cv.imshow("Espejo", espejo)
+    cv.imshow("decabeza", decabeza)
+    cv.imshow("decabezaespejo", decabezaespejo)
+
+
 
     # Salgo del programa oprimiendo la tecla ESC
     if cv.waitKey(1) == 27:

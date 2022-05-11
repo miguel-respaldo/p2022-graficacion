@@ -1,0 +1,7 @@
+https://docs.python.org/3/library/venv.html
+
+1. source venv/bin/activate
+
+para instalar opencv
+
+2. pip3 install opencv-python

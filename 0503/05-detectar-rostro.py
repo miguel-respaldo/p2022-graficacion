@@ -2,11 +2,11 @@ import cv2 as cv
 
 camara = cv.VideoCapture(0)
 
-detector = cv.CascadeClassifier("haarcascade_frontalface_default.xml")
-
 if not camara.isOpened():
     print("No puedo abrir la camara.")
     exit(1)
+
+detector = cv.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 while True:
     # Leeo la imagen de la camara

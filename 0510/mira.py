@@ -2,11 +2,12 @@ import cv2 as cv
 
 camara = cv.VideoCapture(0)
 
-detector = cv.CascadeClassifier("haarcascade_frontalface_default.xml")
-
 if not camara.isOpened():
     print("No puedo abrir la camara.")
     exit(1)
+
+x=100
+y=100
 
 while True:
     # Leeo la imagen de la camara
@@ -16,17 +17,22 @@ while True:
         print("No puedo capturar la imagen de la camara")
         break
 
-    grises = cv.cvtColor(imagen, cv.COLOR_BGR2GRAY)
-    caras  = detector.detectMultiScale(grises, 1.1, 4)
-
-    for (x,y, w,h) in caras:
-        cv.rectangle(imagen, (x,y), (x+w,y+h), (255,0,0), 2)
+    cv.rectangle(imagen, (x,y), (x+100,y+100), (255,0,0), 2)
 
     cv.imshow("Camara", imagen)
 
+    k=cv.waitKey(1)
     # Salgo del programa oprimiendo la tecla ESC
-    if cv.waitKey(1) == 27:
+    if k == 27:
         break
+    elif  k == ord("e"): # arriba
+        y -= 10
+    elif  k == ord("s"): # izquierda
+        x -= 10
+    elif  k == ord("d"): # abajo
+        y += 10
+    elif  k == ord("f"): # derecha
+        x += 10
 
 camara.release()
 cv.destroyAllWindows()

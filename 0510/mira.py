@@ -17,7 +17,14 @@ while True:
         print("No puedo capturar la imagen de la camara")
         break
 
+    # color BGR
     cv.rectangle(imagen, (x,y), (x+100,y+100), (255,0,0), 2)
+    # lazer
+    cv.line(imagen,(400,599), (x+50,y+50), (0,0,255), 2)
+
+    # cruz
+    cv.line(imagen,(x+40,y+50), (x+60,y+50), (0,0,0), 2)
+    cv.line(imagen,(x+50,y+40), (x+50,y+60), (0,0,0), 2)
 
     cv.imshow("Camara", imagen)
 
